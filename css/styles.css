@@ -7,7 +7,7 @@ body {
    
 .one {
     border-bottom: 1px solid #e7e9fc;
-             
+           
 }
 
 .container {
@@ -126,7 +126,12 @@ ul {
   background-color: #2e2f42;
   padding-top: 188px; 
   padding-bottom: 188px;
-  }
+  background-image: 
+    linear-gradient(90deg, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    url(/images/people-office.jpg);
+  background-size: cover;
+  background-position: center;
+}
 
 /*.main-one {
   display: flex;
