@@ -512,6 +512,7 @@ img {
   line-height: 24px; 
   letter-spacing: 0.02em;
   color: #fff;
+  margin-bottom: 16px;
 }
 
 .list-social-ftr {
@@ -523,11 +524,11 @@ img {
   margin-top: 16px;
 }
 
-.socsvg {
+/*.socsvg {
   width: 24px;
   height: 24px;
 }
-
+*/
 .name-social-ftr {
  display: flex; 
   justify-content: center;  
