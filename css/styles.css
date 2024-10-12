@@ -7,7 +7,7 @@ body {
    
 .one {
     border-bottom: 1px solid #e7e9fc;
-           
+    box-shadow:  0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);       
 }
 
 .container {
@@ -82,11 +82,20 @@ ul {
     padding: 24px 0;
     display: block;
     position: relative;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.menu-one {
+  color: #404bbf;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
 
 .menu:hover,
 .menu:focus {
     color: #404bbf;
+    
 }
 
 .menu::after {
@@ -94,12 +103,17 @@ ul {
     position: absolute;
     width: 100%;
     height: 2px;
-    background-color: #4d5ae5; /* Колір підкреслення */
-    bottom: 0; /* Підкреслення знизу */
+    background-color: #404bbf; 
+    bottom: 0; 
     left: 0;
-    transform: scaleX(0); /* Спочатку невидиме */
+    transform: scaleX(0); 
     transform-origin: bottom right;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    bottom: -1px;
+    height: 4px;
+    border-radius: 2px;
+
+
 }
 
 .menu.active::after {
@@ -121,6 +135,7 @@ ul {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #434455;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
 }
 
@@ -144,8 +159,9 @@ ul {
   background-color: #2e2f42;
   padding-top: 188px; 
   padding-bottom: 188px;
+  max-width: 1440px; 
   background-image: 
-      linear-gradient(90deg, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
       url(../images/office.jpg);
   background-size: cover; 
   background-position: center; 
@@ -193,7 +209,8 @@ ul {
     gap: 10px;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;    
+    text-align: center;
+    transition:  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);   
  }
 
 .btn-main:hover,
@@ -241,9 +258,16 @@ ul {
 }
 
 .vkr {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
   width: 264px;
   height: 112px;
   position: relative;
+  background-color: #f4f4fd; 
+  border-radius: 4px; 
+  border: 1px solid #8e8f99; 
+  margin-bottom: 8px; 
 }
 
 .vkr-icon {
@@ -334,7 +358,7 @@ img {
 }
 
 .icon-social {
-  fill:#fff;
+  fill:#f4f4fd;
   
 }
 
@@ -373,32 +397,41 @@ img {
   background: #fff;
   width: calc((100% - 48px) / 3);
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1); 
-  position: relative;
-  overflow: hidden;
+  
+  
 }
 
 .prod-name:hover {
+  transform: translateY(0%);
   box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+ 
 }
 
-.prod-img {
-  width: 100%;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+.img-portfolio {
+  position: relative;
+  overflow: hidden;
+
 }
 
-.prod-name::before {
-  content: "";
+.ovr {
   position: absolute;
-  bottom: -100%;
-  left: 0;
-  right: 0;
+  top: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5; 
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  padding: 40px 32px; 
+  background-color: #4d5ae5;
   height: 100%;
-  background-color: #4d5ae5;; /* Колір оверлею */
-  transition: bottom 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+  width: 100%;
+  transform: translateY(100%); 
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+
 }
 
-.prod-name:hover::before {
-  bottom: 0; /* Показуємо оверлей при ховері */
+.prod-name:hover .ovr {
+  transform: translateY(0%);
 }
 
 .name-prod {
@@ -409,7 +442,7 @@ img {
   border-right: 1px solid #e7e9fc;
   position: relative;
   background-color:#ffffff;
-  z-index: 1;
+
     
 }
 
@@ -422,11 +455,14 @@ img {
 
 .ftr-logo {
    display: flex;
-   align-items: flex-start;
+   align-items: baseline;
    justify-content: flex-start;
    flex-direction: row;
 }
    
+.logo-ftr {
+  margin-right: 120px;
+} 
 
 
 .span-ftr {
@@ -467,7 +503,7 @@ img {
 
 .ftr-social {
   width: 208px;
-  margin-left: 120px;
+  margin-bottom: 16px; 
 }
 
 .ftr-name-social {
@@ -485,6 +521,11 @@ img {
   flex-direction: row;
   gap: 16px;
   margin-top: 16px;
+}
+
+.socsvg {
+  width: 24px;
+  height: 24px;
 }
 
 .name-social-ftr {
