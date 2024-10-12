@@ -81,6 +81,7 @@ ul {
     color: #2e2f42;
     padding: 24px 0;
     display: block;
+    position: relative;
 }
 
 .menu:hover,
@@ -88,6 +89,23 @@ ul {
     color: #404bbf;
 }
 
+.menu::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #4d5ae5; /* Колір підкреслення */
+    bottom: 0; /* Підкреслення знизу */
+    left: 0;
+    transform: scaleX(0); /* Спочатку невидиме */
+    transform-origin: bottom right;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu.active::after {
+    transform: scaleX(1); /* Підкреслення активне */
+    transform-origin: bottom left; /* Початок зліва */
+}
 
   address {
   font-style: normal;
@@ -222,6 +240,19 @@ ul {
       
 }
 
+.vkr {
+  width: 264px;
+  height: 112px;
+  position: relative;
+}
+
+.vkr-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .cntr {
    text-align: center; 
 }
@@ -276,14 +307,54 @@ img {
   border-radius: 0 0 4px 4px;
   padding: 0px 0px 32px 0px;
   width: calc((100% - 72px) / 4);
-  height: 380px;
+  
 }
 
 .name-team {
   padding-top: 32px; 
   padding-bottom: 32px;
+  
    
 }
+
+.list-social{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;  
+  align-items: center; 
+  gap: 24px;
+  margin-top: 8px;
+
+}
+
+.link-social {
+  width: 40px;
+  height: 40px;
+  
+}
+
+.icon-social {
+  fill:#fff;
+  
+}
+
+.name-social {
+  display: flex; 
+  justify-content: center;  
+  align-items: center; 
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  width: 100%; 
+  height: 100%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.name-social:hover,
+.name-social:focus {
+  background-color: #404bbf;
+}
+
+
 
 .prg {
     text-align: center;
@@ -301,6 +372,33 @@ img {
 .prod-name {
   background: #fff;
   width: calc((100% - 48px) / 3);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+  position: relative;
+  overflow: hidden;
+}
+
+.prod-name:hover {
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+}
+
+.prod-img {
+  width: 100%;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.prod-name::before {
+  content: "";
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-color: #4d5ae5;; /* Колір оверлею */
+  transition: bottom 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+}
+
+.prod-name:hover::before {
+  bottom: 0; /* Показуємо оверлей при ховері */
 }
 
 .name-prod {
@@ -309,7 +407,9 @@ img {
   border-bottom: 1px solid #e7e9fc;
   border-left: 1px solid #e7e9fc;
   border-right: 1px solid #e7e9fc;
- 
+  position: relative;
+  background-color:#ffffff;
+  z-index: 1;
     
 }
 
@@ -317,8 +417,17 @@ img {
     background-color: #2e2f42;
     padding-top: 100px; 
     padding-bottom: 100px;
-   
+}   
+    
+
+.ftr-logo {
+   display: flex;
+   align-items: flex-start;
+   justify-content: flex-start;
+   flex-direction: row;
 }
+   
+
 
 .span-ftr {
     font-family: "Raleway", sans-serif;
@@ -354,4 +463,26 @@ img {
     color: #f4f4fd;
     width: 264px;
     text-align: left;
+}
+
+.ftr-social {
+  width: 208px;
+  margin-left: 120px;
+}
+
+.ftr-name-social {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px; 
+  letter-spacing: 0.02em;
+  color: #fff;
+}
+
+.list-social-ftr {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 16px;
+  margin-top: 16px;
 }
