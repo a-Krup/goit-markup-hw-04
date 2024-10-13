@@ -117,8 +117,8 @@ ul {
 }
 
 .menu.active::after {
-    transform: scaleX(1); /* Підкреслення активне */
-    transform-origin: bottom left; /* Початок зліва */
+    transform: scaleX(1); 
+    transform-origin: bottom left; 
 }
 
   address {
@@ -159,7 +159,8 @@ ul {
   background-color: #2e2f42;
   padding-top: 188px; 
   padding-bottom: 188px;
-  max-width: 1440px; 
+  max-width: 1440px;
+  margin: 0 auto; 
   background-image: 
       linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
       url(../images/office.jpg);
@@ -201,7 +202,7 @@ ul {
     min-width: 169px;
     height: 56px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-    margin-bottom: 185px;
+    /*margin-bottom: 185px;*/
     display: block;
     align-items: flex-start;
     justify-content: flex-start;
@@ -329,7 +330,7 @@ img {
   box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
   background: #fff;
   border-radius: 0 0 4px 4px;
-  padding: 0px 0px 32px 0px;
+  /*padding: 0px 0px 32px 0px;*/
   width: calc((100% - 72px) / 4);
   
 }
